@@ -7,11 +7,8 @@ import java.util.Map;
 public class ProcessMessage {
     private final String message;
     private final List<Operation> rules = new ArrayList<>();
-    // Add more rules here
-    private final Map<Character, Operation> operationMap = Map.of(
-            '1', Operation.REVERSE,
-            '2', Operation.MD5
-    );
+    // Obtain the rule to operation mapping from Operation enum
+    private final Map<String, Operation> operationMap = Operation.map;
     public ProcessMessage(String rules, String message) {
         if (rules.length() > 10) {
             throw new IllegalArgumentException("Invalid input");
@@ -26,7 +23,7 @@ public class ProcessMessage {
     private void buildRules(String rules) {
         // check if the rules are valid
         for (int i = 0; i < rules.length(); i++) {
-            Operation op = operationMap.get(rules.charAt(i));
+            Operation op = operationMap.get(String.valueOf(rules.charAt(i)));
             if (op == null) {
                 throw new IllegalArgumentException("Invalid input");
             }

@@ -103,8 +103,12 @@ GET localhost:8080/reply/helloworld
 }
 ```
 
-## Additional Feature
-- Added CI pipeline for the project using Github Action
-- Added new validation for parameters for v2
+## Features
+- Added CI pipeline for the project using Github Action for quicker iteration & feedback
+- Added new validation for parameters for v2 to set safe constraints:
   - No more than 10 rules
   - No more than 100 characters in message
+- To introduce a new operation, follow these steps:
+  1. Add a new enumeration constant in the Operation enum.
+  2. In the perform method, add a new case in the switch statement that corresponds to the newly added enum constant.
+  3. Ensure you define the functionality for this new case according to the requirements of the operation.
