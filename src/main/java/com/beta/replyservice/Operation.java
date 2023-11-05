@@ -36,7 +36,14 @@ public enum Operation {
         return rule;
     }
 
+    private boolean validateMessage(String message) {
+        return message != null && message.matches("^[a-zA-Z0-9]*$") && message.length() <= 100;
+    }
+
     public String perform(String message) {
+        if (!validateMessage(message)) {
+            throw new IllegalArgumentException("Invalid input");
+        }
         switch (rule) {
             case "1":
                 return reverse(message);

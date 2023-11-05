@@ -108,6 +108,7 @@ GET localhost:8080/reply/helloworld
 - Added new validation for parameters for v2 to set safe constraints:
   - No more than 10 rules
   - No more than 100 characters in message
+  - Character set in message must be alphanumeric and non-null
 - To introduce a new operation, follow these steps:
   1. Add a new enumeration constant in the Operation enum.
   2. In the perform method, add a new case in the switch statement that corresponds to the newly added enum constant.
