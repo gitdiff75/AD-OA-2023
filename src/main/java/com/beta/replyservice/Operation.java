@@ -54,7 +54,6 @@ public enum Operation {
         }
     }
 
-    // Operations implementation
     private static String md5(String data) {
         // compute the data with md5 encoding
         // Get a MessageDigest object for the MD5 algorithm
